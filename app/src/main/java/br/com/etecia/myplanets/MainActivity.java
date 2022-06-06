@@ -1,12 +1,15 @@
 package br.com.etecia.myplanets;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    int iamgensPlanetas[] = {R.drawable.jupiter, R.drawable.lua, R.drawable.marte, R.drawable.mercurio, R.drawable.netuno
+    int imagensPlanetas[] = {R.drawable.jupiter, R.drawable.lua, R.drawable.marte, R.drawable.mercurio, R.drawable.netuno,
             R.drawable.plutao, R.drawable.saturno, R.drawable.sol, R.drawable.terra, R.drawable.urano, R.drawable.venus};
 
 
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter adapter = new MyAdapter();
 
-        listaPlanetas.setAdapter();
+        listaPlanetas.setAdapter(adapter);
 
 
     }//OnCreate
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 0;
+            return imagensPlanetas.length;
         }
 
         @Override
@@ -58,6 +61,23 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
+            //Declarara componentes do componentesa que serão utilizados na lista
+            ImageView imgPlanetas;
+            TextView txtPlanetas;
+            CardView cardPlanetas;
+
+            View view1 = getLayoutInflater().inflate(R.layout.modelo_planetas,null);
+
+            txtPlanetas = view1.findViewById(R.id.txtModeloPlaneta);
+            imgPlanetas = view1.findViewById(R.id.imgModeloPlaneta);
+
+            //Implementar m´wtodos nos componentes
+
+            txtPlanetas.setText(nomePlanetas[i]);
+            imgPlanetas.setImageResource(imagensPlanetas[i]);
+            imgPlanetas.setImageResource(imagensPlanetas[i]);
+
+
             return null;
         }
     } //Adapter

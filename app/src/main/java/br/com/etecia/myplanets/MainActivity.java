@@ -13,8 +13,14 @@ public class MainActivity extends AppCompatActivity {
     //Declarar a lista.
     ListView listaPlanetas;
     //C
-    String nomePlanetas[] = {"Jupiter","Lua","Marte","Mercurio",
-                "Neturno","Plutão","Saturo","Sol","Terra","Urano","Venus"};
+    String nomePlanetas[] = {"Jupiter", "Lua", "Marte", "Mercurio",
+            "Neturno", "Plutão", "Saturno", "Sol", "Terra", "Urano", "Venus"};
+
+
+
+    int iamgensPlanetas[] = {R.drawable.jupiter, R.drawable.lua, R.drawable.marte, R.drawable.mercurio, R.drawable.netuno
+            R.drawable.plutao, R.drawable.saturno, R.drawable.sol, R.drawable.terra, R.drawable.urano, R.drawable.venus};
+
 
 
     @Override
@@ -31,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }//OnCreate
+
     //Criando uma classe interna - inner class
-    public class MyAdapter extends BaseAdapter{
+    public class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -53,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
             return null;
         }
-    }
+    } //Adapter
 
 
 }
